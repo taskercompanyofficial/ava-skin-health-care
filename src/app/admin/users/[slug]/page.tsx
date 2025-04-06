@@ -62,7 +62,7 @@ export default function UserForm({ params }: Props) {
                         toast.error('User not found');
                         router.push('/admin/users');
                     }
-                } catch (error) {
+                } catch {
                     toast.error('Failed to fetch user');
                     router.push('/admin/users');
                 }
@@ -100,7 +100,7 @@ export default function UserForm({ params }: Props) {
                 toast.success('User updated successfully');
             }
             router.push('/admin/users');
-        } catch (error) {
+        } catch {
             toast.error(isNew ? 'Failed to create user' : 'Failed to update user');
         } finally {
             setSaving(false);
@@ -118,9 +118,9 @@ export default function UserForm({ params }: Props) {
     return (
         <div className="container mx-auto py-8">
             <div className="flex items-center mb-6">
-                <Button 
-                    variant="ghost" 
-                    size="sm" 
+                <Button
+                    variant="ghost"
+                    size="sm"
                     onClick={() => router.push('/admin/users')}
                     className="mr-4"
                 >
@@ -150,9 +150,9 @@ export default function UserForm({ params }: Props) {
 
                             <div className="space-y-2">
                                 <label htmlFor="email" className="text-sm font-medium">Email</label>
-                                <Input 
-                                    id="email" 
-                                    value={user.email} 
+                                <Input
+                                    id="email"
+                                    value={user.email}
                                     onChange={(e) => setUser({ ...user, email: e.target.value })}
                                     disabled={!isNew}
                                     required

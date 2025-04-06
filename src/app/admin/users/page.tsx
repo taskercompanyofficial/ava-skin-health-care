@@ -1,8 +1,7 @@
 import { getUsers, getUserStats, getUserGrowthData, deleteUser } from '@/actions/users';
-import React from 'react'
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { IconUsers, IconUserPlus, IconUserCheck, IconEdit, IconTrash } from "@tabler/icons-react"
+import { IconUsers, IconUserPlus, IconUserCheck, IconEdit } from "@tabler/icons-react";
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import DeleteDialog from '@/components/custom/delete-dialog';

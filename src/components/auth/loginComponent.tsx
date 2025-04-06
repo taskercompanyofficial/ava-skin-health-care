@@ -83,8 +83,8 @@ export default function LoginComponent() {
         try {
             await signInWithGoogle()
             router.push('/')
-        } catch (error: any) {
-            setErrors({ email: error.message || 'Failed to login with Google' })
+        } catch (error: unknown) {
+            setErrors({ email: error instanceof Error ? error.message : 'Failed to login with Google' })
         } finally {
             setLoading(false)
         }

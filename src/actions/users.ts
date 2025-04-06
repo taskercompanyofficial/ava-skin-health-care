@@ -1,6 +1,6 @@
 'use server';
 import { db } from '@/lib/config.firebase';
-import { collection, getDocs, addDoc, doc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs, addDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { deleteUserAccount } from '@/lib/auth';
 import { revalidatePath } from 'next/cache';
 
@@ -14,7 +14,7 @@ export async function getUsers() {
             ...doc.data()
         })) as User[];
         return { success: true, data: users };
-    } catch (error) {
+    } catch (error: unknown) {
         return { success: false, error: "Failed to fetch users" + error };
     }
 }
@@ -46,7 +46,7 @@ export async function getUserStats() {
                 newUsersThisMonth
             }
         };
-    } catch (error) {
+    } catch {
         return { success: false, error: "Failed to calculate user statistics" };
     }
 }
@@ -75,7 +75,7 @@ export async function getUserGrowthData() {
             success: true,
             data: chartData
         };
-    } catch (error) {
+    } catch {
         return { success: false, error: "Failed to calculate user growth data" };
     }
 }
@@ -97,7 +97,7 @@ export async function getUserById(userId: string) {
                 ...userSnapshot.data()
             } as User
         };
-    } catch (error) {
+    } catch {
         return { success: false, error: "Failed to fetch user" };
     }
 }
@@ -108,7 +108,7 @@ export async function createUser(userData: Omit<User, 'id'>) {
         const usersCollection = collection(db, 'users');
         const docRef = await addDoc(usersCollection, userData);
         return { success: true, data: { id: docRef.id, ...userData } as User };
-    } catch (error) {
+    } catch {
         return { success: false, error: "Failed to create user" };
     }
 }
@@ -119,7 +119,7 @@ export async function updateUser(userId: string, userData: Partial<Omit<User, 'i
         const userDoc = doc(db, 'users', userId);
         await updateDoc(userDoc, userData);
         return { success: true };
-    } catch (error) {
+    } catch {
         return { success: false, error: "Failed to update user" };
     }
 }
@@ -144,7 +144,7 @@ export async function deleteUser(idOrFormData: string | FormData) {
         await deleteUserAccount({ userId, adminMode: true });
         revalidatePath('/admin/users');
         return { success: true };
-    } catch (error) {
+    } catch (error: unknown) {
         return {
             success: false, error: typeof error === 'string'
                 ? error
