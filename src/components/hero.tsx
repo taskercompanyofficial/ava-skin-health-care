@@ -9,7 +9,7 @@ import { Loader } from 'lucide-react'
 const heroImages = [
     {
         id: 1,
-        image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+        image: 'https://firebasestorage.googleapis.com/v0/b/ava-skin-healthcare.firebasestorage.app/o/d506ed33-bd20-4079-8747-e2268966a089.jpg?alt=media&token=01337e3b-05cd-4d2d-878c-ef73e8c65e87',
         title: 'Premium Skincare Collection',
         subtitle: 'Discover our luxurious range of medical-grade skincare products',
         cta: 'Shop Skincare',
@@ -18,7 +18,7 @@ const heroImages = [
     },
     {
         id: 2,
-        image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+        image: 'https://firebasestorage.googleapis.com/v0/b/ava-skin-healthcare.firebasestorage.app/o/f733f6ad-cb63-49b3-b4f8-8f15698ea793.jpg?alt=media&token=986b40b7-a1f7-4fc2-b5f1-e3d1bba1cfac',
         title: 'Medical Creams',
         subtitle: 'Professional-grade treatments for various skin conditions',
         cta: 'View Products',
