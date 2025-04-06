@@ -68,7 +68,16 @@ export const registerUser = async (
       updatedAt: new Date()
     };
     
-    await setDoc(doc(db, 'users', userCredential.user.uid), userProfile);
+    // Use try-catch specifically for Firestore operation
+    try {
+      await setDoc(doc(db, 'users', userCredential.user.uid), userProfile);
+      console.log('User profile created in Firestore:', userProfile);
+    } catch (firestoreError) {
+      console.error('Failed to create user profile in Firestore:', firestoreError);
+      // Optionally delete the auth user if Firestore fails
+      await deleteFirebaseUser(userCredential.user);
+      throw new Error('Failed to create user profile in database. Please try again.');
+    }
     
     // Refresh the user to get updated profile
     await userCredential.user.reload();
