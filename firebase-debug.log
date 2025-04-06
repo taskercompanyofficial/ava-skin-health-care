@@ -1,0 +1,24 @@
+[debug] [2025-04-06T12:34:29.053Z] ----------------------------------------------------------------------
+[debug] [2025-04-06T12:34:29.057Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\shanz\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-04-06T12:34:29.057Z] CLI Version:   14.1.0
+[debug] [2025-04-06T12:34:29.058Z] Platform:      win32
+[debug] [2025-04-06T12:34:29.058Z] Node Version:  v22.14.0
+[debug] [2025-04-06T12:34:29.058Z] Time:          Sun Apr 06 2025 17:34:29 GMT+0500 (Pakistan Standard Time)
+[debug] [2025-04-06T12:34:29.058Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-06T12:34:29.064Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-04-06T12:34:29.134Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-06T12:34:29.135Z] > authorizing via signed-in user (developertasker@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Projects\Crms\ava-skin-health-care
+
+[debug] [2025-04-06T12:34:29.780Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-04-06T12:34:29.782Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
